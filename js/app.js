@@ -1,0 +1,1 @@
+var editorApp = angular.module('editorApp', ['colorpicker.module', 'texteditor.module','ui.bootstrap','dialogs','ngSanitize']);

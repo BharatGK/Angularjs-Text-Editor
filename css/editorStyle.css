@@ -1,0 +1,19 @@
+#bodyBg{
+    background-color: antiquewhite;
+}
+#countWord{
+    width: 10%;
+}
+#totalWord{
+    width: 10%;
+}
+#editorTitle{
+    /*margin-left:25%;
+    background-color:beige;
+    margin-right:40%;*/
+    color: aliceblue;
+}
+.editorBackground{
+    background-color:white;
+    border:solid antiquewhite;
+}

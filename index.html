@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="editorApp">
+ 
+  <head>
+      <!--Styles start from here-->
+    <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+      <!--directive and colorpicker styles-->
+    <link rel="stylesheet" href="css/style.css" />
+      <!--index.html style-->
+    <link rel="stylesheet" href="css/editorStyle.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+      <!--toastr message styles-->
+    <link rel="stylesheet" href="css/toastr/toastr.min.css">
+    <!--JS Files start from here-->
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/vendor/angular.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+      <!--To load data in html from angular scope-->
+    <script src="js/vendor/angular-sanitize.min.js"></script>
+      <!--To show modal box-->
+    <script src="js/vendor/ui-bootstrap.min.js"></script>
+    <script src="js/vendor/dialogs.min.js"></script>
+    <script src="js/vendor/ui-bootstrap-tpls.js"></script>
+      <!--To show success or error message-->
+    <script src="js/vendor/toastr/toastr.min.js"></script>
+      <!--angular app file-->
+    <script src="js/app.js"></script>
+      <!--editor color picker js file-->
+    <script src="js/vendor/bootstrap-colorpicker-module.js"></script>
+    <script src="js/directive/angular-editor.js"></script>
+      <!--controller file-->
+    <script src="js/controller/editorControllerJs.js"></script>
+  </head>
+
+  <body id="bodyBg" ng-controller="editorController" background="img/background2.png">
+  <div class="col-sm-12">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6"><br><br><br>
+  <h2 id="editorTitle"> AngularJS Text Editor</h2><br>
+     <form class="editorBackground">
+         
+         <div class="row">
+           <div class="col-md-8">
+            <div class="form-group">
+             *Character count not support for space,enter and formating
+             <label for="inputdefault" style="margin-top:4%;margin-left:4%;"><font color="red">
+               <input id="countWord" type="text" value="{{characterLimit}}"> characters remaining. </font></label>
+            <label for="inputdefault" style="margin-top:4%;margin-left:4%;"><font color="red">
+               <input id="totalWord" type="text" value="{{totalEnteredCharacter}}"> total entered characters. </font></label>
+            </div>
+           </div>
+          </div>
+            
+        <div id="editorText" class="backGroundColor">
+            <div texteditor textarea-id="txtArea{{$index}}"
+              textarea-class="form-control"  
+              textarea-height="350px" 
+                 ng-trim="false"
+              textarea-ng-maxlength="{{maxlength}}"
+              textarea-placeholder="e.g.  Sitting like a mountain let your mind rise and fly and soar."
+              ng-keyup="remaningCharacterCount()"
+              textarea-name="textareaQuestion"
+              textarea-required 
+              ng-model="textareaCount" 
+              enable-bootstrap-title="true"
+              textarea-menu="menu"
+              disabled="disabled"
+              ng-click="showEditor()">
+            </div>
+
+        </div>
+    </form><!--Editor ends here-->
+          <br>
+          <div class="btn btn-success" ng-click="saveEditorText()">Show Preview</div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+  </body>
+    
+
+</html>
